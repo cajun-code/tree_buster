@@ -1,4 +1,4 @@
-require 'awesome_nested_set_patch'
+require require File.join(File.dirname(__FILE__), "..", "awesome_nested_set_patch") 
 
 def find_root(issue)
   if issue.parent_id.nil?
