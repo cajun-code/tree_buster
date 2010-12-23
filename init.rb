@@ -1,5 +1,5 @@
 require 'redmine'
-
+require File.join(File.dirname(__FILE__), "lib", "awesome_nested_set_patch") 
 
 Redmine::Plugin.register :redmine_tree_buster do
   name 'Redmine Tree Buster plugin'
