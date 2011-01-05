@@ -1,0 +1,9 @@
+update issues left join issue_relations on (issues.id = issue_relations.issue_from_id and issue_relations.relation_type='parents') set issues.parent_id = issue_relations.issue_to_id where issues.parent_id is null;
+
+
+select issues.id, issues.parent_id from issues left join issue_relations on (issues.id = issue_relations.issue_from_id and issue_relations.relation_type='parents') where issues.parent_id is null;
+
+delete from issue_relations where relation_type='parents' or relation_type='child'
+
+
+select issues.id, issues.parent_id, issues.root_id, lft, rgt from issues where issues.id = 8662 or issues.parent_id=8662;
